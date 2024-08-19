@@ -17,3 +17,6 @@ npm-dev:
 
 pint:
 	docker compose exec app bash -c "cd /var/www/html/laravel && ./vendor/bin/pint --repair"
+
+ide:
+	docker compose exec app bash -c "cd /var/www/html/laravel && php artisan ide-helper:models"
