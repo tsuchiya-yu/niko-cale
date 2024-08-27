@@ -15,12 +15,15 @@ class LogRequestMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // リクエストパスとパラメータをログ出力
+        // リクエストパス、パラメータ、HTTPメソッド、ユーザーエージェント、IPアドレスをログ出力
         $filteredParams = $this->filterSensitiveData($request->all());
         $logMessage = sprintf(
-            'Request Path: %s | Request Parameters: %s',
+            'Method: %s | Path: %s | Parameters: %s | UA: %s | IP: %s',
+            $request->method(),
             $request->path(),
-            json_encode($filteredParams)
+            json_encode($filteredParams),
+            $request->header('User-Agent'),
+            $request->header('X-Forwarded-For', $request->ip())
         );
 
         Log::debug($logMessage);
