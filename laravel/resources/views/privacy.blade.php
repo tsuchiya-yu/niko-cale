@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'プライバシーポリシー')
-@section('noindex', 'true')
+@section('index', 'true')
 
 @section('content')
 <main class="container">
