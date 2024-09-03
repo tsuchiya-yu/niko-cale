@@ -39,7 +39,7 @@ class CalendarTest extends TestCase
 
         $members = CalendarMember::factory()->count(3)->create(['calendar_id' => $calendar->id]);
 
-        $expectedNames = $members->pluck('name')->implode(", ");
+        $expectedNames = $members->pluck('name')->implode(', ');
 
         $this->assertEquals($expectedNames, $calendar->getMemberNames(', '));
     }
