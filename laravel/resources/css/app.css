@@ -1,0 +1,107 @@
+body {
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    text-wrap: wrap;
+}
+
+.container {
+    max-width: 400px;
+    padding-top: 20px;
+    margin: 10px auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+fieldset {
+    border: none;
+}
+
+input,textarea {
+    background-color: #fff;
+}
+
+aside {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    display: inline-block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #0047BA;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-half {
+    width: calc((100% - 20px)/2);
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.optional-badge {
+    display: inline-block;
+    background-color: #ccc;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin: 0 10px;
+}
+
+.label-box {
+    display: flex;
+    align-items: flex-start;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #333333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.8em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
