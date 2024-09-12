@@ -1,0 +1,8 @@
+@import url('../top.css');
+
+.delete-link {
+    color: #999;
+    text-align: right;
+    cursor: pointer;
+    margin-top: 10px;
+}
