@@ -1,7 +1,7 @@
 <header class="header">
     <a href="{{ route('top') }}">
         <div class="wrap-logo">
-            <img src="{{ Vite::asset('resources/images/service_logo.png') }}" class="logo">
+            <img src="{{ asset('images/service_logo.png') }}" class="logo">
             <div class="title">ニコカレ</div>
         </div>
     </a>

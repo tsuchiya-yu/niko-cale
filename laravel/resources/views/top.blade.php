@@ -24,7 +24,7 @@
         <p>・面倒なログインが一切なし</p>
         <p>・PCとスマホどちらでもOK！</p>
         <p>・全員の調子が一目でわかる！</p>
-        <img src="{{ Vite::asset('images/calendar_capture.png') }}" class="calendar_capturep">
+        <img src="{{ asset('images/calendar_capture.png') }}" class="calendar_capturep">
     </section>
     <a href="{{ route('calendars.create') }}">
         <button type="submit">カレンダーをつくる</button>

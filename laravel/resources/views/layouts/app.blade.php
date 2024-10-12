@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Language" content="ja">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- TODO: 画像は仮 --}}
-    <meta property="og:image" content="{{ Vite::asset('resources/images/calendar_capture.png') }}">
+    <meta property="og:image" content="{{ asset('images/calendar_capture.png') }}">
     {{-- TODO: 未定 --}}
     <meta property="og:url" content="">
     

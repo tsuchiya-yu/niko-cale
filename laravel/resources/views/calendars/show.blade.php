@@ -31,7 +31,7 @@
                                 <td class="cell" data-member-id="{{ $member->id }}"
                                     data-date="{{ $date->format('Y-m-d') }}" data-name="{{ $member->name }}">
                                     @if ($condition)
-                                        <img src="{{ Vite::asset('resources/images/conditions/' . $condition->condition->value . '.png') }}">
+                                        <img src="{{ asset('images/conditions/' . $condition->condition->value . '.png') }}">
                                     @else
                                         <p></p>
                                     @endif
@@ -94,7 +94,7 @@
                 <div class="mood-selector">
                     @foreach (\App\Enums\ConditionStatus::cases() as $condition)
                         <div class='wrap-icon'>
-                            <img src="{{ Vite::asset('resources/images/conditions/' . $condition->value . '.png') }}" 
+                            <img src="{{ asset('images/conditions/' . $condition->value . '.png') }}" 
                                 class="mood-icon" 
                                 data-mood="{{ $condition->value }}">
                         </div>
