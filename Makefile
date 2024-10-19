@@ -20,3 +20,6 @@ pint:
 
 ide:
 	docker compose exec app bash -c "cd /var/www/html/laravel && php artisan ide-helper:models"
+
+test:
+	docker compose exec app bash -c "cd /var/www/html/laravel && php artisan test"

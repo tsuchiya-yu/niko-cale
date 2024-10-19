@@ -60,3 +60,9 @@
     ```shell
     make ide
     ```
+
+- **テストの実行**
+  - テストコードを実行します。
+    ```shell
+    make test
+    ```
