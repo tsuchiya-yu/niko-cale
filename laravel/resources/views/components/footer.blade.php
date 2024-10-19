@@ -21,6 +21,7 @@
     background-color: #f0f0f0;
     padding: 10px 0;
     display: flex;
+    gap: 10px 0;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -35,7 +36,7 @@
     margin: 0 10px;
     font-weight: bold;
     text-align: center;
-    width: 45%;
+    width: 40%;
 }
 
 @media (min-width: 600px) {
