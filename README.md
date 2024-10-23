@@ -3,8 +3,8 @@
 1. **リポジトリをクローンする**
    - 最初に、プロジェクトのリポジトリをローカル環境にクローンします。
      ```shell
-     git clone <リポジトリのURL>
-     cd <プロジェクトディレクトリ>
+     git clone https://github.com/tsuchiya-yu/niko-cale.git
+     cd niko-cale
      ```
 
 2. **Dockerコンテナのビルド**
