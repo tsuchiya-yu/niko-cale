@@ -1,0 +1,56 @@
+# Stage 1: Build assets
+FROM node:18 as build
+
+WORKDIR /app
+
+# アプリケーションコードのコピー
+COPY ./laravel/package*.json ./
+COPY ./laravel/vite.config.js ./
+COPY ./laravel/resources ./resources
+
+# Vite のバージョンを指定してインストール
+RUN npm install
+
+# アセットのビルド
+RUN npm run build
+
+# Stage 2: PHPアプリケーション
+FROM php:8.3-fpm
+
+# 必要なパッケージのインストール
+RUN apt-get update && apt-get install -y \
+    zip \
+    unzip \
+    git \
+    curl \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    nginx \
+    && docker-php-ext-install pdo_mysql gd
+
+# Composerのインストール
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www/html
+
+# アプリケーションコードのコピー
+COPY ./laravel .
+
+# ComposerでPHPの依存関係をインストール
+RUN composer install --no-dev --optimize-autoloader
+
+# ビルドしたアセットをコピー
+COPY --from=build /app/public/build /var/www/html/public/build
+
+# Nginxの設定ファイルをコピー
+COPY ./nginx.prod.conf /etc/nginx/nginx.conf
+
+# 権限の設定
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public/build
+
+# ポートの公開
+EXPOSE 80
+
+# コンテナ起動時のコマンド
+CMD service nginx start && php-fpm
